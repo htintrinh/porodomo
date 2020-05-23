@@ -15,9 +15,9 @@ struct ContentView: View {
     @State var porodomoTimeMinutes: String = "0"
     var body: some View {
         VStack {
-            VStack(alignment: .leading, spacing: 20) {
+            VStack{
                 Text("Porodomo Time in Miniutes:")
-                TextField("", text: self.$porodomoTimeMinutes)
+                TextField("", text: self.$porodomoTimeMinutes).frame(width: 100, height: 44, alignment: .center)
             }
             Button(action: {
                 let min = Double(self.porodomoTimeMinutes) ?? 0
@@ -29,7 +29,8 @@ struct ContentView: View {
             }) {
                 Text("Set Timer")
             }
-        }
+        }.frame(width: 300, height: 100, alignment: .center)
+            .padding(.all, 8)
     }
     
     func playAlarmSound() -> Void {
